@@ -3,6 +3,7 @@
 
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 int _printf(const char *format, ...);
 int _putchar(char c);
@@ -13,6 +14,7 @@ int _strlen(const char *str);
 int print_char(va_list list);
 int print_string(va_list list);
 int print(char *str);
+int print_integer(va_list list);
 
 /**
  * struct _format - A struct
