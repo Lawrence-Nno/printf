@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
-*print_unsigned - print an unsigned int
+* print_hexadecimal_low - print a number in hexadecimal format
 * @list: Number to print
 *
 * Return: Length of the number
 **/
 
-int print_unsigned(va_list list)
+int print_hexadecimal_low(va_list list)
 {
 	char *p_buff;
 	int size;
 
-	p_buff = itoa(va_arg(list, unsigned int), 10);
+	p_buff = itoa(va_arg(list, unsigned int), 16);
 
 	size = print((p_buff != NULL) ? p_buff : "NULL");
 

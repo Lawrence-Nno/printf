@@ -15,6 +15,12 @@ int print_char(va_list list);
 int print_string(va_list list);
 int print(char *str);
 int print_integer(va_list list);
+int print_unsigned(va_list list);
+int print_octal(va_list list);
+int is_lowercase(char);
+char *string_to_upper(char *);
+int print_hexadecimal_low(va_list list);
+int print_hexadecimal_upp(va_list list);
 
 /**
  * struct _format - A struct
