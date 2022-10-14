@@ -17,7 +17,7 @@ int manage(const char *str, va_list list)
 	{
 		if (str[i] == '%')
 		{
-			y = manage_percent(str, list, %i);
+			y = manage_percent(str, list, &i);
 			if (y == -1)
 				return (-1);
 			size += y;
