@@ -21,6 +21,7 @@ int is_lowercase(char);
 char *string_to_upper(char *);
 int print_hexadecimal_low(va_list list);
 int print_hexadecimal_upp(va_list list);
+int  print_rev_string(va_list list);
 
 /**
  * struct _format - A struct
