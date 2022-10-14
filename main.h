@@ -14,4 +14,15 @@ int print_char(va_list list);
 int print_string(va_list list);
 int print(char *str);
 
+/**
+ * struct _format - A struct
+ * @type: The format
+ * @f: The associated function
+ */
+typedef struct _format
+{
+	char type;
+	int (*f)(va_list);
+} format;
+
 #endif /* _MAIN_H_ */
