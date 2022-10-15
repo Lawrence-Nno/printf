@@ -41,7 +41,7 @@ int print_rot(va_list list)
 	int ptr_len;
 
 	ptr = va_arg(list, char *);
-	ptr_len = rot13((p != NULL) ? ptr : "(ahyy)");
+	ptr_len = rot13((ptr != NULL) ? ptr : "(ahyy)");
 
 	return (ptr_len);
 }
