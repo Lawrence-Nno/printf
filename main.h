@@ -33,6 +33,8 @@ int rot13(char *s);
  * struct _format - A struct
  * @type: The format
  * @f: The associated function
+ *
+ * Description: This struct doesn't need a longer description
  */
 typedef struct _format
 {
