@@ -24,11 +24,17 @@ int print_hexadecimal_upp(va_list list);
 int  print_rev_string(va_list list);
 int print_pointer(va_list list);
 int _strcmp(char *, char *);
+int print_binary(va_list list);
+char *itoa(long int num, int base);
+int print_rot(va_list list);
+int rot13(char *s);
 
 /**
  * struct _format - A struct
  * @type: The format
  * @f: The associated function
+ *
+ * Description: This struct doesn't need a longer description
  */
 typedef struct _format
 {

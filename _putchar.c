@@ -25,7 +25,7 @@ int bf(char c)
 
 	if (c == -1 || i == 1024)
 	{
-		write(1, buffer, i);
+		write (1, buffer, i);
 		i = 0;
 	}
 	if (c != -1)
