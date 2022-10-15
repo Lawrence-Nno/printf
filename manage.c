@@ -4,8 +4,7 @@
  * manage - This function manages and controls the format
  * @str: The format of the String
  * @list: The List of arguments
- * Return: Returns the total size of arguments passed and
- * total size of the base string
+ * Return: Returns the total size of arguments passed
  */
 
 int manage(const char *str, va_list list)
@@ -40,6 +39,7 @@ int manage(const char *str, va_list list)
 int manage_percent(const char *str, va_list list, int *i)
 {
 	int size, j, number_formats;
+
 	format formats[] = {
 		{'s', print_string}, {'c', print_char},
 		{'d', print_integer}, {'i', print_integer},
