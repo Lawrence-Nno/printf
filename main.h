@@ -24,6 +24,8 @@ int print_hexadecimal_upp(va_list list);
 int  print_rev_string(va_list list);
 int print_pointer(va_list list);
 int _strcmp(char *, char *);
+int print_binary(va_list list);
+char *itoa(long int num, int base);
 
 /**
  * struct _format - A struct
