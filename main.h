@@ -8,6 +8,7 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 int bf(char c);
+int _puts(char *string);
 int manage(const char *str, va_list list);
 int manage_percent(const char *str, va_list list, int *i);
 int _strlen(const char *str);
