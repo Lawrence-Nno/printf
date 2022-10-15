@@ -28,7 +28,6 @@ int print_binary(va_list list);
 char *itoa(long int num, int base);
 int print_rot(va_list list);
 int rot13(char *s);
-int print_s(va_list s);
 
 /**
  * struct _format - A struct
