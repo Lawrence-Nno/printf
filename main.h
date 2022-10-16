@@ -76,4 +76,9 @@ typedef struct parse_table
 	void (*spec_func)();
 } parse;
 
+int _abs(int number);
+int contadordigit(int number);
+int integer(int number);
+int printint(char *format, va_list pa);
+
 #endif /* _MAIN_H_ */
