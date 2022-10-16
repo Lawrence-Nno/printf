@@ -63,13 +63,13 @@ typedef struct tags
 } tags;
 
 /**
- * struct parse - Table used for parsing the %s
+ * struct parse_table - Table used for parsing the %s
  * @c: The character found
  * @lev: The level from 5 to 1
  * @spec_func: This function puts the matched spec into the buffer
  */
 
-typedef struct parse
+typedef struct parse_table
 {
 	char c;
 	int lev;
