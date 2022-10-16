@@ -18,6 +18,51 @@
  * @printed: THe number of chars printed from _write
  */
 
+typedef struct buffer
+{
+        char *buff;
+        char *tmpbuff;
+        const char *format;
+        va_list addrpnt;
+        int buffpnt;
+        int tmppnt;
+        int strpnt;
+        unsigned int printed;
+} buffer;
+
+/**
+ * struct tags - Format tags after %
+ * @spec: The specifier
+ * @len: The length
+ * @prec: The precision
+ * @width: The width
+ * @flag: The flags
+ */
+
+typedef struct tags
+{
+        char spec;
+        char len;
+        int prec;
+        int width;
+        char flag[6];
+} tags;
+
+/**
+ * struct parse_table - Table used for parsing the %s
+ * @c: The character found
+ * @lev: The level from 5 to 1
+ * @spec_func: This function puts the matched spec into the buffer
+ */
+
+typedef struct parse_table
+{
+        char c;
+        int lev;
+        void (*spec_func)();
+} parse;
+
+
 /* prototpes for _printf */
 int _printf(const char *format, ...);
 void _copy(buffer *bf);
@@ -69,52 +114,6 @@ void _out_of_time(char *buf_str, char *tmp_str, char *front, tags *t);
 int __atoi(const char *s, int n);
 int str_len(char *str);
 void _revstr(char *s);
-
-
-
-typedef struct buffer
-{
-	char *buff;
-	char *tmpbuff;
-	const char *format;
-	va_list addrpnt;
-	int buffpnt;
-	int tmppnt;
-	int strpnt;
-	unsigned int printed;
-} buffer;
-
-/**
- * struct tags - Format tags after %
- * @spec: The specifier
- * @len: The length
- * @prec: The precision
- * @width: The width
- * @flag: The flags
- */
-
-typedef struct tags
-{
-	char spec;
-	char len;
-	int prec;
-	int width;
-	char flag[6];
-} tags;
-
-/**
- * struct parse_table - Table used for parsing the %s
- * @c: The character found
- * @lev: The level from 5 to 1
- * @spec_func: This function puts the matched spec into the buffer
- */
-
-typedef struct parse_table
-{
-	char c;
-	int lev;
-	void (*spec_func)();
-} parse;
 
 
 #endif /* _MAIN_H_ */
