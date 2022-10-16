@@ -23,6 +23,9 @@ void _write(buffer *bf, char c);
 void _write_str(buffer *bf, char *s);
 void _write_tmpbuf(buffer *bf);
 
+
+
+
 /**
  * struct buffer - The buffer structure for implementation of our printf
  * @buff: Buffer to write characters to
@@ -78,5 +81,10 @@ typedef struct parse_table
 	int lev;
 	void (*spec_func)();
 } parse;
+
+int _abs(int number);
+int contadordigit(int number);
+int integer(int number);
+int printint(char *format, va_list pa);
 
 #endif /* _MAIN_H_ */
