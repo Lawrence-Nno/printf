@@ -19,6 +19,9 @@ int _isFlagPlus(tags *t);
 int _isFlagSpace(tags *t);
 int _isFlagHashtag(tags *t);
 int _isFlagZero(tags *t);
+void _write(buffer *bf, char c);
+void _write_str(buffer *bf, char *s);
+void _write_tmpbuf(buffer *bf);
 
 /**
  * struct buffer - The buffer structure for implementation of our printf
