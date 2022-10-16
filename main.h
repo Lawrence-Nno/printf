@@ -19,7 +19,34 @@ int _isFlagPlus(tags *t);
 int _isFlagSpace(tags *t);
 int _isFlagHashtag(tags *t);
 int _isFlagZero(tags *t);
-int print_integer(va_list list);
+void _spec_b(buffer *bf, tags *t);
+void _spec_o(buffer *bf, tags *t);
+void _spec_X(buffer *bf, tags *t);
+void _spec_x(buffer *bf, tags *t);
+void _spec_u(buffer *bf, tags *t);
+void _spec_c(buffer *bf, tags *t);
+void _spec_d(buffer *bf, tags *t);
+int num_len(int n);
+void _spec_nil(buffer *bf);
+void _spec_p(buffer *bf, tags __attribute__((unused))(*t));
+void _spec_pct(buffer *bf);
+void _spec_r(buffer *bf, tags *t);
+void _spec_R(buffer *bf, tags *t);
+void _to_rot13(char *s);
+void _spec_s(buffer *bf, tags *t);
+void _spec_S(buffer *bf, tags *t);
+char *_str_whelp(tags *t, char *hold, int hold_len);
+char *_to_hex_unreadable(char *hold);
+char *_uint_to_str(unsigned long int n);
+char *_uint_to_hexstr(unsigned long int n);
+char *_uint_to_caphexstr(unsigned long int n);
+char *_uint_to_octstr(unsigned long int n);
+char *_uint_to_binstr(unsigned long int n);
+char *_int_to_str(long int n);
+char *_int_to_hexstr(long int n);
+char *_int_to_caphexstr(long int n);
+char *_int_to_octstr(long int n);
+char *_int_to_binstr(long int n);
 
 /**
  * struct buffer - The buffer structure for implementation of our printf
@@ -77,9 +104,5 @@ typedef struct parse_table
 	void (*spec_func)();
 } parse;
 
-int _abs(int number);
-int contadordigit(int number);
-int integer(int number);
-int printint(char *format, va_list pa);
 
 #endif /* _MAIN_H_ */
