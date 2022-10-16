@@ -22,6 +22,13 @@ int _isFlagZero(tags *t);
 void _write(buffer *bf, char c);
 void _write_str(buffer *bf, char *s);
 void _write_tmpbuf(buffer *bf);
+void _spec_num_help(buffer *bf, tags *t, char *num_str, int minus);
+void get_sign(tags *t, int minus, char *front);
+char *check_prec(char *tmp_str, char *num_str, tags *t, int s_len);
+void _out_of_time(char *buf_str, char *tmp_str, char *front, tags *t);
+int __atoi(const char *s, int n);
+int str_len(char *str);
+void _revstr(char *s);
 
 
 
