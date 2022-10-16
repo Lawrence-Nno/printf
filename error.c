@@ -4,7 +4,7 @@
  * error_ - A placeholder for nonexisting functions
  */
 
-void error_(void)
+void _error(void)
 {
 	write(1, "Error, not compatible\n", 22);
 }
