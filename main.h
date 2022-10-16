@@ -1,45 +1,79 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
-#include <stdarg.h>
 #include <unistd.h>
+#include <stdarg.h>
 #include <stdlib.h>
+#include <stdio.h>
 
+/* prototpes for _printf */
 int _printf(const char *format, ...);
-int _putchar(char c);
-int bf(char c);
-int manage(const char *str, va_list list);
-int manage_percent(const char *str, va_list list, int *i);
-int _strlen(const char *str);
-int print_char(va_list list);
-int print_string(va_list list);
-int print(char *str);
-int print_integer(va_list list);
-int print_unsigned(va_list list);
-int print_octal(va_list list);
-int is_lowercase(char);
-char *string_to_upper(char *);
-int print_hexadecimal_low(va_list list);
-int print_hexadecimal_upp(va_list list);
-int  print_rev_string(va_list list);
-int print_pointer(va_list list);
-int _strcmp(char *, char *);
-int print_binary(va_list list);
-char *itoa(long int num, int base);
-int print_rot(va_list list);
-int rot13(char *s);
+void _copy(buffer *bf);
+void _parse_tag(buffer *bf, tags *t, parse_table *table);
+void _parse(buffer *bf);
+void init_tag(tags *t);
+void init_buffer(buffer *bf, const char *format);
+void error_(void);
+int _isFlagMinus(tags *t);
+int _isFlagPlus(tags *t);
+int _isFlagSpace(tags *t);
+int _isFlagHashtag(tags *t);
+int _isFlagZero(tags *t);
 
 /**
- * struct _format - A struct
- * @type: The format
- * @f: The associated function
- *
- * Description: This struct doesn't need a longer description
+ * struct buffer - The buffer structure for implementation of our printf
+ * @buff: Buffer to write characters to
+ * @tmpbuff: tmp buffer to write to before transfering to buffer
+ * @string: The string passed to printf
+ * @addrpnt: Variadic address point
+ * @buffpnt: Current point in the buffer
+ * @tmppnt: Current point in the tmp bufer
+ * @strpnt: Current point in the string
+ * @printed: THe number of chars printed from _write
  */
-typedef struct _format
+
+typedef struct buffer
 {
-	char type;
-	int (*f)(va_list);
-} format;
+	char *buff;
+	char *tmpbuff;
+	const char *format;
+	va_list addrpnt;
+	int buffpnt;
+	int tmppnt;
+	int strpnt;
+	unsigned int printed;
+} buffer;
+
+/**
+ * struct tags - Format tags after %
+ * @spec: The specifier
+ * @len: The length
+ * @prec: The precision
+ * @width: The width
+ * @flag: The flags
+ */
+
+typedef struct tags
+{
+	char spec;
+	char len;
+	int prec;
+	int width;
+	char flag[6];
+} tags;
+
+/**
+ * struct parse - Table used for parsing the %s
+ * @c: The character found
+ * @lev: The level from 5 to 1
+ * @spec_func: This function puts the matched spec into the buffer
+ */
+
+typedef struct parse
+{
+	char c;
+	int lev;
+	void (*spec_func)();
+} parse;
 
 #endif /* _MAIN_H_ */

@@ -1,24 +1,32 @@
 #include "main.h"
 
 /**
- * _printf - This functions displays a formatted output
- * @format: The format string
- * Return: Returns the number of characters inputted
+ * _printf - This is our personal recreation of printf
+ * @format: This the formatted strint to stdout
+ * Return: Returns number of characters written
  */
 
 int _printf(const char *format, ...)
 {
-	int size;
-	va_list argvs;
+	/* creating buffer structure and initializing */
+	buffer bf;
 
-	if (format == NULL)
-		return (-1);
-	size = _strlen(format);
-	if (size <= 0)
-		return (0);
-	va_start(argvs, format);
-	size = manage(format, argvs);
-	_putchar(-1);
-	va_end(argvs);
-	return (size);
+	_init_buffer(&bf, format);
+	va_start(bf.addrpnt, format);
+
+	while (bf.format[bf.strpnt] != '\0')
+	{
+		_copy(&bf);
+		if (bf.format[bf.strpnt] != '\0')
+			_parse(&bf);
+	}
+	/* Writing buffer to stdout */
+	if (bf.buffpnt > 0)
+		write(1, bf.buff, bf.buffpnt);
+	bf.printed += bf.buffpnt;
+
+	va_end(bf.addrpnt);
+	free(bf.buff);
+	free(bf.tmpbuff);
+	return (bf.printed);
 }
