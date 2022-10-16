@@ -47,6 +47,13 @@ char *_int_to_hexstr(long int n);
 char *_int_to_caphexstr(long int n);
 char *_int_to_octstr(long int n);
 char *_int_to_binstr(long int n);
+void _write(buffer *bf, char c);
+void _write_str(buffer *bf, char *s);
+void _write_tmpbuf(buffer *bf);
+
+
+
+
 
 /**
  * struct buffer - The buffer structure for implementation of our printf
