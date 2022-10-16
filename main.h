@@ -13,7 +13,7 @@ void _parse_tag(buffer *bf, tags *t, parse_table *table);
 void _parse(buffer *bf);
 void init_tag(tags *t);
 void init_buffer(buffer *bf, const char *format);
-void error_(void);
+void _error(void);
 int _isFlagMinus(tags *t);
 int _isFlagPlus(tags *t);
 int _isFlagSpace(tags *t);
