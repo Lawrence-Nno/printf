@@ -10,12 +10,12 @@ void _parse(buffer *bf)
 	int i;
 	tags t;
 	parse_table table[] = {
-		{'d', 5, print_d}, {'i' 5, print_d}, {'c', 5, print_c},
-		{'s', 5, print_s}, {'u', 5, print_u}, {'o', 5, print_o},
-		{'x', 5, print_x}, {'X', 5, print_X}, {'b', 5, print_b},
-		{'S', 5, print_S}, {'p', 5, print_p}, {'R', 5, print_R},
-		{'r', 5, print_r}, {'%', 5, print_pct},
-		/* when no specifier is found */ {'\0', 5, print_nil},
+		{'d', 5, _spec_d}, {'i' 5, _spec_d}, {'c', 5, _spec_c},
+		{'s', 5, _spec_s}, {'u', 5, _spec_u}, {'o', 5, _spec_o},
+		{'x', 5, _spec_x}, {'X', 5, _spec_X}, {'b', 5, _spec_b},
+		{'S', 5, _spec_S}, {'p', 5, _spec_p}, {'R', 5, _spec_R},
+		{'r', 5, _spec_r}, {'%', 5, _spec_pct},
+		/* when no specifier is found */ {'\0', 5, _spec_nil},
 
 		{'h', 4, _error}, {'l', 4, _error}, {'.', 3, _error},
 		{'1', 2, _error}, {'2', 2, _error}, {'3', 2, _error},
