@@ -6,6 +6,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * struct buffer - The buffer structure for implementation of our printf
+ * @buff: Buffer to write characters to
+ * @tmpbuff: tmp buffer to write to before transfering to buffer
+ * @string: The string passed to printf
+ * @addrpnt: Variadic address point
+ * @buffpnt: Current point in the buffer
+ * @tmppnt: Current point in the tmp bufer
+ * @strpnt: Current point in the string
+ * @printed: THe number of chars printed from _write
+ */
+
 /* prototpes for _printf */
 int _printf(const char *format, ...);
 void _copy(buffer *bf);
@@ -59,20 +71,6 @@ int str_len(char *str);
 void _revstr(char *s);
 
 
-
-
-
-/**
- * struct buffer - The buffer structure for implementation of our printf
- * @buff: Buffer to write characters to
- * @tmpbuff: tmp buffer to write to before transfering to buffer
- * @string: The string passed to printf
- * @addrpnt: Variadic address point
- * @buffpnt: Current point in the buffer
- * @tmppnt: Current point in the tmp bufer
- * @strpnt: Current point in the string
- * @printed: THe number of chars printed from _write
- */
 
 typedef struct buffer
 {
