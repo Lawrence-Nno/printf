@@ -19,6 +19,7 @@ int _isFlagPlus(tags *t);
 int _isFlagSpace(tags *t);
 int _isFlagHashtag(tags *t);
 int _isFlagZero(tags *t);
+int print_integer(va_list list);
 
 /**
  * struct buffer - The buffer structure for implementation of our printf
