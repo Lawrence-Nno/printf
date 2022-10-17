@@ -2,7 +2,7 @@
 
 /**
  * _write - Writes char to buffer amd reset if full
-i * @bf: The buffer to write to
+ * @bf: The buffer to write to
  * @c: The character to write
  */
 
