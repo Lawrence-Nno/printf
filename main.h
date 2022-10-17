@@ -8,7 +8,7 @@
 
 /**
  * struct buffer - The buffer structure for implementation of our printf
- * @buff: Buffer to write characters to
+ * @buff: Buffer to write characters to.
  * @tmpbuff: tmp buffer to write to before transfering to buffer
  * @string: The string passed to printf
  * @addrpnt: Variadic address point
