@@ -2,7 +2,7 @@
 
 /**
  * _write - Writes char to buffer amd reset if full
- * @bf: The buffer to write to
+i * @bf: The buffer to write to
  * @c: The character to write
  */
 
@@ -33,7 +33,7 @@ void _write_str(buffer *bf, char *s)
 			bf->printed += bf->buffpnt;
 			bf->buffpnt = 0;
 		}
-			bf->buff[bf->buffpnt++] = *s++;
+		bf->buff[bf->buffpnt++] = *s++;
 	}
 }
 
