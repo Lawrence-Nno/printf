@@ -8,5 +8,5 @@
 void _copy(buffer *bf)
 {
 	while (bf->format[bf->strpnt] != '%' && bf->format[bf->strpnt] != '\0')
-		_write(bf, bf->format[bf->strpnt]);
+		_write(bf, bf->format[bf->strpnt++]);
 }
