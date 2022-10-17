@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	/* creating buffer structure and initializing */
 	buffer bf;
 
-	_init_buffer(&bf, format);
+	init_buffer(&bf, format);
 	va_start(bf.addrpnt, format);
 
 	while (bf.format[bf.strpnt] != '\0')

@@ -7,7 +7,7 @@
  * @t: tags to send to our specifier function
  */
 
-void _parse_tag(buffer *bf, tags *t, parse_table *table)
+void _parse_tag(buffer *bf, tags *t, parse *table)
 {
 	int depth, i, j;
 
@@ -18,9 +18,9 @@ void _parse_tag(buffer *bf, tags *t, parse_table *table)
 		{
 			depth = table[i].lev;
 			if (depth == 5)
-				found_spec(bf, t, table i);
+				found_spec(bf, t, table, i);
 			else if (depth == 4)
-				found_length(bf, t, table i);
+				found_length(bf, t, table, i);
 			else if (depth == 3)
 				found_prec(bf, t, table, i);
 			else if (depth == 2)

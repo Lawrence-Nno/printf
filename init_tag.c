@@ -27,7 +27,7 @@ void init_buffer(buffer *bf, const char *format)
 	bf->format = format;
 	bf->buff = malloc(1024);
 	bf->tmpbuff = malloc(512);
-	bf->addrpnt = 0;
+	bf->strpnt = 0;
 	bf->buffpnt = 0;
 	bf->tmppnt = 0;
 	bf->printed = 0;

@@ -8,7 +8,7 @@ void _spec_nil(buffer *bf)
 	int i;
 
 	/* if we started parsing but found end of string, print nothing */
-	if (bf->string[bf->strpnt] != '\0')
+	if (bf->format[bf->strpnt] != '\0')
 	{
 		for (i = 0; i < bf->tmppnt; i++)
 			_write(bf, bf->tmpbuff[i]);

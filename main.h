@@ -45,7 +45,7 @@ typedef struct tags
         char len;
         int prec;
         int width;
-        char flag[6];
+        char flags[6];
 } tags;
 
 /**
@@ -66,7 +66,7 @@ typedef struct parse_table
 /* prototpes for _printf */
 int _printf(const char *format, ...);
 void _copy(buffer *bf);
-void _parse_tag(buffer *bf, tags *t, parse_table *table);
+void _parse_tag(buffer *bf, tags *t, parse *table);
 void _parse(buffer *bf);
 void init_tag(tags *t);
 void init_buffer(buffer *bf, const char *format);
@@ -114,6 +114,11 @@ void _out_of_time(char *buf_str, char *tmp_str, char *front, tags *t);
 int __atoi(const char *s, int n);
 int str_len(char *str);
 void _revstr(char *s);
+void found_spec(buffer *bf, tags *t, parse *table, int i);
+void found_length(buffer *bf, tags *t, parse *table, int i);
+void found_prec(buffer *bf, tags *t, parse *table, int i);
+void found_width(buffer *bf, tags *t);
+void found_flag(buffer *bf, tags *t, parse *table, int i);
 
 
 #endif /* _MAIN_H_ */

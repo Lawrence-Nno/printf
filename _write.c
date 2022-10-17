@@ -31,7 +31,7 @@ void _write_str(buffer *bf, char *s)
 		{
 			write(1, bf->buff, bf->buffpnt);
 			bf->printed += bf->buffpnt;
-			bf->bp = 0;
+			bf->buffpnt = 0;
 		}
 			bf->buff[bf->buffpnt++] = *s++;
 	}
@@ -55,6 +55,6 @@ void _write_tmpbuff(buffer *bf)
 			bf->printed += bf->buffpnt;
 			bf->buffpnt = 0;
 		}
-		bg->buff[bf->buffpnt++] = bf->tmpbuff[i];
+		bf->buff[bf->buffpnt++] = bf->tmpbuff[i];
 	}
 }

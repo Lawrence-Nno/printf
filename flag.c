@@ -9,9 +9,11 @@ int _isFlagMinus(tags *t)
 	int i;
 
 	for (i = 0; t->flags[i] != '\0'; i++)
+	{
 		if (t->flags[i] == '-')
 			return (1);
-		return (0);
+	}
+	return (0);
 }
 /**
  * _isFlagPlus - checks if the stuct has a plus flag

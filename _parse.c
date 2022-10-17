@@ -9,8 +9,8 @@ void _parse(buffer *bf)
 {
 	int i;
 	tags t;
-	parse_table table[] = {
-		{'d', 5, _spec_d}, {'i' 5, _spec_d}, {'c', 5, _spec_c},
+	parse table[] = {
+		{'d', 5, _spec_d}, {'i', 5, _spec_d}, {'c', 5, _spec_c},
 		{'s', 5, _spec_s}, {'u', 5, _spec_u}, {'o', 5, _spec_o},
 		{'x', 5, _spec_x}, {'X', 5, _spec_X}, {'b', 5, _spec_b},
 		{'S', 5, _spec_S}, {'p', 5, _spec_p}, {'R', 5, _spec_R},
@@ -30,11 +30,11 @@ void _parse(buffer *bf)
 	if (bf->format[bf->strpnt] != '%')
 		write(1, "Error: Don't parse when not at '%'\n", 35);
 	bf->tmppnt = 0;
-	bf->tmpbuff[b_r->tmppnt++] = '%';
-	bf->strpnt;
+	bf->tmpbuff[bf->tmppnt++] = '%';
+	bf->strpnt++;
 
 	init_tag(&t);
-	parse_tag(bf, &t, table);
+	_parse_tag(bf, &t, table);
 
 	/* Calling the specifier function matching the specifier found */
 	i = 0;
